@@ -9,10 +9,17 @@ public class Livraison
         // TODO : À compléter/modifier
 {
     // Les données membres statiques
-    // TODO : À compléter/modifier
+    final private int MAX_TENTATIVES = 3;
 
     // Les attributs d'instance
     // TODO : À compléter/modifier
+    private int id;
+    private Priorite priorite;
+    private int tentative;
+    private int lot;
+    private Statut statut;
+    private static int idSequentiel = 0;
+
 
     /**
      * Constructeur d'une livraison.
@@ -21,14 +28,21 @@ public class Livraison
      * @param lot      Le lot auquel cette livraison appartient.
      */
     // TODO : À compléter/modifier
+    public Livraison(Priorite priorite, int lot){
+        this.priorite = priorite;
+        this.lot = lot;
+        this.id = prochainID();
+        this.tentative = 0;
+        this.statut = Statut.EN_ATTENTE;
+    }
 
     /**
      * Produit un nouvel ID pour la Livraison
      */
     private static int prochainID() {
         // TODO : À compléter/modifier
-        System.err.println("Méthode Livraison::prochainID non implémentée");
-        return 0;
+        idSequentiel++;
+        return idSequentiel;
     }
 
     /**
@@ -86,7 +100,7 @@ public class Livraison
      */
     public void nouvelleTentative() {
         // TODO : À compléter/modifier
-        System.err.println("Méthode Livraison::nouvelleTentative non implémentée");
+        this.tentative++;
     }
 
     /**
@@ -96,9 +110,9 @@ public class Livraison
      */
     public boolean resteTentatives() {
         // TODO : À compléter/modifier
-        System.err.println("Méthode Livraison::resteTentatives non implémentée");
-        return false;
+        return this.tentative < MAX_TENTATIVES;
     }
+
 
     /**
      * Construit et retourne une chaîne de caractères équivalente à cette livraison.
@@ -108,8 +122,11 @@ public class Livraison
     @Override
     public String toString() {
         // TODO : À compléter/modifier
-        System.err.println("Méthode Livraison::toString non implémentée");
-        return null;
+        return "Livraison N°" + this.id + "\n" +
+                "Priorité : " + this.priorite + "\n" +
+                "Status : " + this.statut + "\n" +
+                "Nombre de tentatives : " + this.tentative + "\n" +
+                "Numéro de lot : " + this.lot + "\n";
     }
 
     /**

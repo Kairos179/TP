@@ -15,22 +15,24 @@ public class ListeChaineeLivreurs implements IListeChaineeLivreurs {
      * Ajoute un objet Livreur à la fin de la liste
      *
      * @param unLivreur Le livreur à ajouter.
-     * @throws ListeChaineeException Si le livreur est déjà dans la liste.
      */
     @Override
     public void ajouter(Livreur unLivreur) throws ListeChaineeException {
         // TODO : À compléter/modifier
+        System.err.println("Méthode ListeChaineeLivreurs::ajouter non implémentée");
     }
 
     /**
-     * Supprime un livreur à partir de son identifiant.
+     * Supprime un livreur de la liste
      *
-     * @param idLivreur identifiant du livreur à supprimer.
-     * @throws ListeChaineeException si le livreur n'existe pas dans la liste.
+     * @param idLivreur : identifiant du livreur à supprimer
+     * @return true si suppression, false sinon, car le livreur n'existe pas dans la liste
      */
     @Override
-    public void supprimer(int idLivreur) throws ListeChaineeException {
+    public boolean supprimer(int idLivreur) {
         // TODO : À compléter/modifier
+        System.err.println("Méthode ListeChaineeLivreurs::supprimer non implémentée");
+        return false;
     }
 
     /**
@@ -42,6 +44,7 @@ public class ListeChaineeLivreurs implements IListeChaineeLivreurs {
     @Override
     public Livreur rechercher(int idLivreur) {
         // TODO : À compléter/modifier
+        System.err.println("Méthode ListeChaineeLivreurs::rechercher non implémentée");
         return null;
     }
 
@@ -53,6 +56,7 @@ public class ListeChaineeLivreurs implements IListeChaineeLivreurs {
     @Override
     public int taille() {
         // TODO : À compléter/modifier
+        System.err.println("Méthode ListeChaineeLivreurs::taille non implémentée");
         return 0;
     }
 
@@ -63,6 +67,7 @@ public class ListeChaineeLivreurs implements IListeChaineeLivreurs {
      */
     public Livreur[] toArray() {
         // TODO : À compléter/modifier
+        System.err.println("Méthode ListeChaineeLivreurs::toArray non implémentée");
         return null;
     }
 

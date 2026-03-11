@@ -4,7 +4,7 @@ public interface IListeChaineeLivreurs {
     /**
      * Ajouter un nouvel objet livreur à la liste.
      * L'ajout se fait en fin de liste.
-     * <p>
+     *
      * Précondition : Il ne faut pas avoir 2 livreurs ayant le même ID
      * dans la liste.
      *
@@ -17,11 +17,9 @@ public interface IListeChaineeLivreurs {
      * Supprime un livreur à partir de son identifiant.
      *
      * @param idLivreur : identifiant du livreur à supprimer.
-     * @throws ListeChaineeException si le livreur n'existe pas dans la liste.
+     * @return true, sinon false si le livreur n'existe pas.
      */
-    void supprimer(int idLivreur) throws ListeChaineeException;
-
-    ;
+    boolean supprimer(int idLivreur);
 
     /**
      * Recherche l'objet Livreur à partir de son identifiant
